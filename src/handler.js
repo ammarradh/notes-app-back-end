@@ -18,7 +18,7 @@ const addNoteHandler = (request, h) => {
   if(isSuccess){
     const response = h.response({
       status: 'success',
-      massage : 'Catatan berhasil ditambahkan',
+      message : 'Catatan berhasil ditambahkan',
       data : {
         noteId : id,
       },
@@ -29,7 +29,7 @@ const addNoteHandler = (request, h) => {
 
   const response = h.response({
     status : 'fail',
-    massage : 'Catatan gagal ditambahkan',
+    message : 'Catatan gagal ditambahkan',
   });
   response.code(500);
   return response;
@@ -58,7 +58,7 @@ const getNoteByIdHandler = (request, h) => {
   }
   const response = h.response({
     status: 'fail',
-    massage : 'Catatan tidak ditemukan',
+    message : 'Catatan tidak ditemukan',
   });
   response.code(404);
   return response;
@@ -82,7 +82,7 @@ const editNoteByIdHandler = (request, h) => {
     };
     const response = h.response({
       status: 'success',
-      massage : 'Catatan berhasil diperbarui'
+      message : 'Catatan berhasil diperbarui'
     });
     response.code(200);
     return response;
@@ -90,7 +90,7 @@ const editNoteByIdHandler = (request, h) => {
 
   const response = h.response({
     status: 'fail',
-    massage : 'Gagal memperbarui catatan, Id tidak ditemukan'
+    message : 'Gagal memperbarui catatan, Id tidak ditemukan'
   });
   response.code(404);
   return response;
@@ -103,7 +103,7 @@ const deleteNoteByIdHandler = (request, h) => {
     notes.splice(index, 1);
     const response = h.response({
       status : 'success',
-      massage : 'Catatan berhasil dihapus',
+      message : 'Catatan berhasil dihapus',
     });
     response.code(200);
     return response;
@@ -111,7 +111,7 @@ const deleteNoteByIdHandler = (request, h) => {
 
   const response = h.response({
     status : 'fail',
-    massage : 'Catatan gagal dihapus. Id tidak ditemukan',
+    message : 'Catatan gagal dihapus. Id tidak ditemukan',
   });
   response.code(404);
   return response;
